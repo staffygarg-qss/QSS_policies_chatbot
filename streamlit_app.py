@@ -14,8 +14,10 @@ import streamlit as st
 load_dotenv()
 os.getenv("GROQ_API_KEY")
 
+model = os.getenv("MODEL")
+
 llm = ChatGroq(
-    model="llama-3.1-8b-instant"
+    model=model
 )
 
 # app config
@@ -112,6 +114,7 @@ Answer:"""
         "user_question": user_query,
     })
 
+
 # session state
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = [
@@ -127,6 +130,7 @@ for message in st.session_state.chat_history:
     elif isinstance(message, HumanMessage):
         with st.chat_message("Human"):
             st.write(message.content)
+
 
 # user input
 user_query = st.chat_input("Type your message here...")
