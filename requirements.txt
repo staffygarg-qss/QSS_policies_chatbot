@@ -1,0 +1,11 @@
+langchain
+langchain-groq
+python-dotenv
+langchain-community
+bs4
+unstructured
+pypdf
+langchain-huggingface
+sentence-transformers
+faiss-cpu
+streamlit
